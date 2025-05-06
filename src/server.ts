@@ -2,6 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import usersRouter from './routes/users';
+import workoutsRouter from './routes/workouts';
+
+app.use('/workouts', workoutsRouter);
+
 
 dotenv.config();
 const app = express();

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { db } from '../db/index';
 import { Insertable } from 'kysely';
-import type { InsertableWorkout } from '../db/schema';
+import type { DB } from '../db/schema';
 
 const router = Router();
 
@@ -21,8 +21,8 @@ router.post('/', async (req, res) => {
   const { user_id, name, date } = req.body;
 
   try {
-    const newWorkout: Insertable<InsertableWorkout> = {
-      user_id,
+    const newWorkout: Insertable<DB['workouts']> = {
+        user_id,
       name,
       date,
     };
