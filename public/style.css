@@ -1,45 +1,34 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     background-color: #eafaf1;
+    color: #0e3d18;
     margin: 0;
-    padding: 20px;
-    color: #2e5e3e;
+    padding: 2rem;
   }
   
   h1 {
+    color: #1e8b50;
     text-align: center;
-    color: #226c3f;
-    margin-bottom: 30px;
   }
   
-  #workouts {
-    display: grid;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .workout {
-    background-color: #ffffff;
-    border-left: 6px solid #38a169;
+  section {
+    margin-bottom: 2rem;
+    background: #d7f0de;
+    border: 2px solid #1e8b50;
     padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 128, 0, 0.15);
-    transition: transform 0.2s ease;
+    border-radius: 10px;
   }
   
-  .workout:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+  ul {
+    list-style-type: none;
+    padding-left: 0;
   }
   
-  h3 {
-    margin: 0 0 10px;
-    color: #2f855a;
-  }
-  
-  p {
-    margin: 5px 0;
-    color: #2e5e3e;
+  li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: #f3fff8;
+    border: 1px solid #a3d9a5;
+    border-radius: 5px;
   }
   
