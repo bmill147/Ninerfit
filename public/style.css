@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eafaf1;
+    margin: 0;
+    padding: 20px;
+    color: #2e5e3e;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #226c3f;
+    margin-bottom: 30px;
+  }
+  
+  #workouts {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .workout {
+    background-color: #ffffff;
+    border-left: 6px solid #38a169;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 128, 0, 0.15);
+    transition: transform 0.2s ease;
+  }
+  
+  .workout:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+  }
+  
+  h3 {
+    margin: 0 0 10px;
+    color: #2f855a;
+  }
+  
+  p {
+    margin: 5px 0;
+    color: #2e5e3e;
+  }
+  
