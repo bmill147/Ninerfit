@@ -1,11 +1,9 @@
-import { Kysely, PostgresDialect } from 'kysely';
-import { Pool } from 'pg';
+import { Kysely, SqliteDialect } from 'kysely';
+import Database from 'better-sqlite3';
 import { DB } from './schema';
 
 export const db = new Kysely<DB>({
-  dialect: new PostgresDialect({
-    pool: new Pool({
-      connectionString: process.env.DATABASE_URL, // set in your .env file
-    }),
+  dialect: new SqliteDialect({
+    database: new Database('ninerfit.db'),
   }),
 });
