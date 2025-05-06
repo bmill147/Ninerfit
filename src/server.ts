@@ -1,30 +1,21 @@
-import express from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
-import db from './db'
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import usersRouter from './routes/users';
 
-dotenv.config()
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const app = express()
+app.use(cors());
+app.use(express.json());
 
-app.use(cors())
-app.use(express.json())
+app.get('/', (_req, res) => {
+  res.send('NinerFit backend is running!');
+});
 
-app.get('/', (req, res) => {
-  res.send('NinerFit API is running!')
-})
+app.use('/users', usersRouter);
 
-app.get('/data', async (req, res) => {
-  try {
-    const result = await db.selectFrom('your_table').selectAll().execute()
-    res.json(result)
-  } catch (error) {
-    console.error('Error fetching data:', error)
-    res.status(500).send('Internal Server Error')
-  }
-})
-
-const port = process.env.PORT || 3000
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://localhost:${PORT}`);
+});
