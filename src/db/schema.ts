@@ -1,5 +1,5 @@
 export interface User {
-    id: number;
+    id?: number;
     username: string;
     email: string;
     password: string;
@@ -7,7 +7,7 @@ export interface User {
   }
   
   export interface Workout {
-    id: number;
+    id?: number;
     user_id: number;
     name: string;
     date: string;

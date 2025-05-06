@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { db } from '../db/index';
 import { Insertable } from 'kysely';
-import type { InsertableUser } from '../db/schema'; // ✅ type from schema
+import type { DB } from '../db/schema'; 
 
 const router = Router();
 
@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
-    const newUser: Insertable<InsertableUser> = {
+    const newUser: Insertable<DB['users']> = {
       username,
       email,
       password,
