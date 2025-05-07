@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "target": "ES2020",          // You can keep this for modern JavaScript features
-      "module": "ESNext",          // ESNext for modern ES Modules
+      "module": "CommonJS",
       "moduleResolution": "Node",  // Use Node's module resolution strategy
       "jsx": "react",              // Ensures React JSX is handled correctly
       "strict": true,              // Enable strict type-checking
