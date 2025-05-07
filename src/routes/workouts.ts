@@ -40,4 +40,39 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+// PUT /workouts/:id - update a workout
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name, date } = req.body;
+
+  try {
+    const updated = await db
+      .updateTable('workouts')
+      .set({ name, date })
+      .where('id', '=', Number(id))
+      .returningAll()
+      .executeTakeFirst();
+
+    res.json(updated);
+  } catch (err) {
+    console.error('Update workout failed:', err);
+    res.status(500).json({ error: 'Update failed' });
+  }
+});
+
+// DELETE /workouts/:id - delete a workout
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await db.deleteFrom('workouts').where('id', '=', Number(id)).execute();
+    res.status(204).send();
+  } catch (err) {
+    console.error('Delete workout failed:', err);
+    res.status(500).json({ error: 'Delete failed' });
+  }
+});
+
+
 export default router;

@@ -41,4 +41,39 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+// PUT /users/:id - update a user
+router.put('/:id', async (req, res) => {
+    const { id } = req.params;
+    const { username, email, password } = req.body;
+  
+    try {
+      const updated = await db
+        .updateTable('users')
+        .set({ username, email, password })
+        .where('id', '=', Number(id))
+        .returningAll()
+        .executeTakeFirst();
+  
+      res.json(updated);
+    } catch (err) {
+      console.error('Update user failed:', err);
+      res.status(500).json({ error: 'Update failed' });
+    }
+  });
+  
+  // DELETE /users/:id - delete a user
+  router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      await db.deleteFrom('users').where('id', '=', Number(id)).execute();
+      res.status(204).send();
+    } catch (err) {
+      console.error('Delete user failed:', err);
+      res.status(500).json({ error: 'Delete failed' });
+    }
+  });
+  
+
 export default router;
