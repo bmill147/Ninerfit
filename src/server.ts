@@ -4,7 +4,13 @@ import path from 'path';
 import dotenv from 'dotenv';
 import usersRouter from './routes/users';
 import workoutsRouter from './routes/workouts';
+<<<<<<< HEAD
 import exercisesRouter from './routes/exercises'; // add if not already
+=======
+
+app.use('/workouts', workoutsRouter);
+
+>>>>>>> parent of dfc873a (updates to backend)
 
 dotenv.config();
 const app = express();
@@ -21,8 +27,11 @@ app.get('/', (_req, res) => {
 });
 
 app.use('/users', usersRouter);
+<<<<<<< HEAD
 app.use('/workouts', workoutsRouter);
 app.use('/exercises', exercisesRouter); // add if not yet
+=======
+>>>>>>> parent of dfc873a (updates to backend)
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
