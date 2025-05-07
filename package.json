@@ -1,38 +1,14 @@
 {
   "name": "ninerfit",
   "version": "1.0.0",
-  "description": "4166 Final",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bmill147/Ninerfit.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bmill147/Ninerfit/issues"
-  },
-  "homepage": "https://github.com/bmill147/Ninerfit#readme",
-  "dependencies": {
-    "better-sqlite3": "^11.9.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "kysely": "^0.28.2",
-    "pg": "^8.15.6",
-    "zod": "^3.24.4"
-  },
+  "dev:backend": "ts-node-dev --respawn --transpile-only src/server.ts",
+  "dev:frontend": "cd client && npm run dev",
+  "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+}
+,
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.1",
-    "@types/node": "^22.15.12",
-    "@types/pg": "^8.12.0",
+    "concurrently": "^8.2.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
