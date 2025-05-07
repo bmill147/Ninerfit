@@ -32,13 +32,12 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
-      {/* Dark mode toggle button with a box around it */}
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
       <button
-        className="absolute top-4 left-4 p-2 text-xs bg-primary text-white rounded-lg border-2 border-primary focus:outline-none"
+        className="absolute top-4 left-4 px-3 py-1 text-sm font-semibold bg-primary text-white border-2 border-primary rounded-lg hover:bg-primary-dark transition"
         onClick={toggleDarkMode}
       >
-        DM
+        Toggle DM
       </button>
 
       {userId ? (
