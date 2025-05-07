@@ -3,12 +3,13 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import usersRouter from './routes/users';
 import workoutsRouter from './routes/workouts';
-
-app.use('/workouts', workoutsRouter);
+import exercisesRouter from './routes/exercises';
 
 
 dotenv.config();
-const app = express();
+
+const app = express(); // ✅ Moved to the top
+
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
@@ -19,6 +20,9 @@ app.get('/', (_req, res) => {
 });
 
 app.use('/users', usersRouter);
+app.use('/workouts', workoutsRouter);
+app.use('/exercises', exercisesRouter);
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);

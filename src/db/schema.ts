@@ -14,7 +14,7 @@ export interface User {
   }
   
   export interface Exercise {
-    id: number;
+    id?: number;
     workout_id: number;
     name: string;
     sets: number;
